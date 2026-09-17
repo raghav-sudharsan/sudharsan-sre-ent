@@ -94,7 +94,7 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/raghav-sudharsan",
     liveDemo: "#",
     diagramId: "docker-architecture",
-    image: "/projects/project-1.jpg"
+    image: "/projects/project-1.svg"
   },
   {
     id: "msme-app",
@@ -111,7 +111,7 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/raghav-sudharsan",
     liveDemo: "#",
     diagramId: "devops-architecture",
-    image: "/projects/project-2.jpg"
+    image: "/projects/project-2.svg"
   },
   {
     id: "prometheus-grafana",
@@ -128,7 +128,7 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/raghav-sudharsan",
     liveDemo: "#",
     diagramId: "monitoring-architecture",
-    image: "/projects/project-3.jpg"
+    image: "/projects/project-3.svg"
   },
   {
     id: "dr-validation",
@@ -145,7 +145,7 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/raghav-sudharsan",
     liveDemo: "#",
     diagramId: "devops-architecture",
-    image: "/projects/project-4.jpg"
+    image: "/projects/project-4.svg"
   },
   {
     id: "aws-resource-tracker",
@@ -162,7 +162,7 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/raghav-sudharsan",
     liveDemo: "#",
     diagramId: "devops-architecture",
-    image: "/projects/project-2.jpg"
+    image: "/projects/project-5.svg"
   }
 ];
 
