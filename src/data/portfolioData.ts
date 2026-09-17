@@ -53,6 +53,8 @@ export interface SkillGroup {
   technologies: string[];
 }
 
+const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+
 export const personalInfo = {
   name: "Sudharsan",
   brandMonogram: "SUDHARSAN",
@@ -62,7 +64,7 @@ export const personalInfo = {
   aboutMe: "I operate across the entire application lifecycle from DEV and QA to UAT, Pre-Production, and PROD. My work involves IIS and .NET environments, containerized microservices, Nginx reverse proxying, Prometheus/Grafana observability, Azure DevOps/TFS release automation, and cloud infrastructure across AWS and GCP. I believe in repeatable deployments, proactive monitoring, structured incident triage, and continuous reliability.",
   yearsOfExperience: 3,
   industryExpertise: "Fintech, SaaS, Multi-Cloud & Enterprise Infrastructure",
-  avatarUrl: "/hero-sudharsan.jpg",
+  avatarUrl: `${base}/hero-sudharsan.jpg`,
   metrics: [
     { label: "Production SLA Target", value: "99.99%", sub: "High-Availability Fintech Platforms" },
     { label: "Disaster Recovery Drills", value: "10+", sub: "Multi-Cloud Enterprise Validations" },
@@ -94,7 +96,7 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/raghav-sudharsan",
     liveDemo: "#",
     diagramId: "integration-platform",
-    image: "/projects/project-1.svg"
+    image: `${base}/projects/project-1.svg`
   },
   {
     id: "dotnet-iis",
@@ -111,7 +113,7 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/raghav-sudharsan",
     liveDemo: "#",
     diagramId: "iis-hosting",
-    image: "/projects/project-2.svg"
+    image: `${base}/projects/project-2.svg`
   },
   {
     id: "release-automation",
@@ -128,7 +130,7 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/raghav-sudharsan",
     liveDemo: "#",
     diagramId: "iis-hosting",
-    image: "/projects/project-3.svg"
+    image: `${base}/projects/project-3.svg`
   },
   {
     id: "monitoring-observability",
@@ -145,7 +147,7 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/raghav-sudharsan",
     liveDemo: "#",
     diagramId: "monitoring",
-    image: "/projects/project-4.svg"
+    image: `${base}/projects/project-4.svg`
   },
   {
     id: "aws-resource-tracker",
@@ -162,7 +164,7 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/raghav-sudharsan",
     liveDemo: "#",
     diagramId: "monitoring",
-    image: "/projects/project-5.svg"
+    image: `${base}/projects/project-5.svg`
   },
   {
     id: "msme-application",
@@ -179,7 +181,7 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/raghav-sudharsan",
     liveDemo: "#",
     diagramId: "integration-platform",
-    image: "/projects/project-6.svg"
+    image: `${base}/projects/project-6.svg`
   }
 ];
 
