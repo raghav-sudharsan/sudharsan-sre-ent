@@ -34,5 +34,21 @@
   <body class="bg-[#070709] text-[#f5f5f7] antialiased selection:bg-[#e6c875]/20 selection:text-[#fdf3d8] overflow-x-hidden min-h-screen">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Fallback for static hosting on GitHub Pages when served directly from repository branch
+      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        var s = document.createElement('script');
+        s.type = 'module';
+        s.crossOrigin = 'anonymous';
+        s.src = '/sudharsan-sre-ent/assets/index.js';
+        document.body.appendChild(s);
+
+        var l = document.createElement('link');
+        l.rel = 'stylesheet';
+        l.crossOrigin = 'anonymous';
+        l.href = '/sudharsan-sre-ent/assets/index.css';
+        document.head.appendChild(l);
+      }
+    </script>
   </body>
 </html>
