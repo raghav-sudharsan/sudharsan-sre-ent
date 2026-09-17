@@ -22,8 +22,17 @@ export const Contact: React.FC = () => {
   const [isCopied, setIsCopied] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [lockoutSeconds, setLockoutSeconds] = useState(0);
 
   const emailAddress = personalInfo.socialLinks.email;
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+    if (lockoutSeconds > 0) {
+      timer = setTimeout(() => setLockoutSeconds((prev) => prev - 1), 1000);
+    }
+    return () => clearTimeout(timer);
+  }, [lockoutSeconds]);
 
   useEffect(() => {
     const handleServiceSelect = (e: Event) => {
@@ -45,7 +54,7 @@ export const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !email || !message) return;
+    if (!name || !email || !message || lockoutSeconds > 0) return;
 
     sound.playSelect();
     setIsSubmitting(true);
@@ -53,6 +62,7 @@ export const Contact: React.FC = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
+      setLockoutSeconds(30);
 
       confetti({
         particleCount: 100,
@@ -179,6 +189,16 @@ export const Contact: React.FC = () => {
           {/* Right Column: Interactive Form */}
           <div className="lg:col-span-7">
             <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-white/[0.08] relative">
+              {/* Terminal command prompt concept */}
+              <div className="mb-8 px-4 py-3 rounded-2xl bg-black/50 border border-white/[0.08] flex items-center justify-between text-xs font-mono">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-[#a1a1aa]">ops@sudharsan:~/production$</span>
+                  <span className="text-[#e6c875] font-semibold">connect --with Sudharsan</span>
+                </div>
+                <span className="hidden sm:inline text-[10px] text-[#71717a] uppercase tracking-wider">Direct Transmission</span>
+              </div>
+
               {isSubmitted ? (
                 <div className="py-16 text-center space-y-4 animate-in fade-in zoom-in duration-300">
                   <div className="w-16 h-16 rounded-full bg-[#e6c875]/10 border border-[#e6c875]/40 text-[#e6c875] flex items-center justify-center mx-auto mb-4">
@@ -277,11 +297,13 @@ export const Contact: React.FC = () => {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-4 rounded-full bg-gradient-to-r from-[#e6c875] via-[#fdf3d8] to-[#e6c875] text-[#070709] font-mono text-xs tracking-widest font-bold uppercase hover:opacity-95 transition-all duration-300 flex items-center justify-center gap-2 shadow-xl shadow-[#e6c875]/10 disabled:opacity-50"
+                    disabled={isSubmitting || lockoutSeconds > 0}
+                    className="w-full py-4 rounded-full bg-gradient-to-r from-[#e6c875] via-[#fdf3d8] to-[#e6c875] text-[#070709] font-mono text-xs tracking-widest font-bold uppercase hover:opacity-95 transition-all duration-300 flex items-center justify-center gap-2 shadow-xl shadow-[#e6c875]/10 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <span>TRANSMITTING...</span>
+                    ) : lockoutSeconds > 0 ? (
+                      <span>TRANSMISSION LOCKOUT ({lockoutSeconds}S)</span>
                     ) : (
                       <>
                         <span>Submit Inquiry</span>

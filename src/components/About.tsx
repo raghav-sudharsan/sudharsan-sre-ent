@@ -101,11 +101,12 @@ export const About: React.FC = () => {
               </div>
               <pre className="font-mono-code text-xs sm:text-[13px] text-[#a1a1aa] leading-relaxed overflow-x-auto">
                 <code>
-                  <span className="text-[#e6c875]">export const</span> <span className="text-[#f5f5f7]">sudharsan</span>: <span className="text-sky-300">SREProfile</span> = &#123;{'\n'}
-                  {'  '}engineer: <span className="text-emerald-300">'Sudharsan S'</span>,{'\n'}
-                  {'  '}role: <span className="text-emerald-300">'DevOps / Site Reliability Engineer'</span>,{'\n'}
+                  <span className="text-[#e6c875]">export const</span> <span className="text-[#f5f5f7]">sudharsan</span>: <span className="text-sky-300">EngineeringProfile</span> = &#123;{'\n'}
+                  {'  '}engineer: <span className="text-emerald-300">'Sudharsan'</span>,{'\n'}
+                  {'  '}positioning: <span className="text-emerald-300">'DevOps Engineer | SRE | Cloud Engineer'</span>,{'\n'}
                   {'  '}experience: <span className="text-amber-300">'3+ Years'</span>,{'\n'}
-                  {'  '}dr_drills_executed: <span className="text-amber-300">10</span>,{'\n'}
+                  {'  '}career_path: <span className="text-purple-300">'IT Admin ➔ System Admin (E2) ➔ DevOps/SRE'</span>,{'\n'}
+                  {'  '}dr_drills_validated: <span className="text-amber-300">10</span>,{'\n'}
                   {'  '}critical_deviations: <span className="text-emerald-300">0</span>,{'\n'}
                   {'  '}core_domains: &#123;{'\n'}
                   {'    '}cloud: [<span className="text-amber-300">'AWS'</span>, <span className="text-amber-300">'GCP'</span>],{'\n'}
@@ -113,7 +114,7 @@ export const About: React.FC = () => {
                   {'    '}observability: [<span className="text-amber-300">'Prometheus'</span>, <span className="text-amber-300">'Grafana'</span>],{'\n'}
                   {'    '}automation: [<span className="text-amber-300">'PowerShell'</span>, <span className="text-amber-300">'Bash'</span>],{'\n'}
                   {'  '}&#125;,{'\n'}
-                  {'  '}sla_target: <span className="text-purple-300">'99.99% Availability'</span>{'\n'}
+                  {'  '}production_sla: <span className="text-purple-300">'99.99% Availability'</span>{'\n'}
                   &#125;;
                 </code>
               </pre>

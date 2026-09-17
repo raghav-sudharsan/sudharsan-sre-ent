@@ -1,243 +1,190 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" style="background:#07070a; font-family:'JetBrains Mono', 'SF Pro Display', -apple-system, monospace;">
   <defs>
-    <!-- Gradients -->
-    <radialGradient id="bgGlow3" cx="50%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#2e1065" stop-opacity="0.45"/>
-      <stop offset="50%" stop-color="#0e0a1a" stop-opacity="0.9"/>
+    <radialGradient id="bgGlowRel" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1e1b4b" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#0a0a14" stop-opacity="0.9"/>
       <stop offset="100%" stop-color="#050508" stop-opacity="1"/>
     </radialGradient>
-    <radialGradient id="purpleGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    <radialGradient id="goldGlowRel" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e6c875" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#e6c875" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="cyanGlow3" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    <radialGradient id="emeraldGlowRel" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
     </radialGradient>
-
-    <!-- Filters -->
-    <filter id="glowPurple" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-    <filter id="shadow3" x="-10%" y="-10%" width="120%" height="120%">
+    <filter id="shadowRel" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.75"/>
     </filter>
-
-    <!-- Chart Fills -->
-    <linearGradient id="areaCyan" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.02"/>
+    <linearGradient id="cardGradRel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#151522" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0b0b12" stop-opacity="0.95"/>
     </linearGradient>
-    <linearGradient id="areaPurple" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.02"/>
+    <linearGradient id="relFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e6c875"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#10b981"/>
     </linearGradient>
-    <linearGradient id="areaGold" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#e6c875" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#e6c875" stop-opacity="0.02"/>
-    </linearGradient>
-    <linearGradient id="cardGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#141124" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#0b0a14" stop-opacity="0.95"/>
-    </linearGradient>
-
-    <!-- Grid -->
-    <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
+    <pattern id="gridRel" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
     </pattern>
   </defs>
 
-  <rect width="1600" height="900" fill="url(#bgGlow3)" />
-  <rect width="1600" height="900" fill="url(#grid3)" />
-
-  <circle cx="500" cy="360" r="300" fill="url(#purpleGlow)" />
-  <circle cx="1150" cy="400" r="280" fill="url(#cyanGlow3)" />
+  <rect width="1600" height="900" fill="url(#bgGlowRel)" />
+  <rect width="1600" height="900" fill="url(#gridRel)" />
+  <circle cx="450" cy="380" r="280" fill="url(#goldGlowRel)" />
+  <circle cx="1150" cy="400" r="280" fill="url(#emeraldGlowRel)" />
 
   <!-- Top System Header Bar -->
   <g id="top-bar">
-    <rect x="60" y="40" width="1480" height="54" rx="12" fill="#0d0a17" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-    <circle cx="95" cy="67" r="6" fill="#a855f7" />
-    <circle cx="95" cy="67" r="10" fill="#a855f7" fill-opacity="0.2" />
-    <text x="115" y="72" fill="#f5f5f7" font-size="13" font-weight="600" letter-spacing="1.5">OBSERVABILITY // PROMETHEUS &amp; GRAFANA TELEMETRY</text>
-    <text x="600" y="72" fill="#71717a" font-size="12">SCRAPE POOL: 14/14 HEALTHY (NODE_EXPORTER + WINDOWS_EXPORTER)</text>
+    <rect x="60" y="40" width="1480" height="54" rx="12" fill="#0d0d17" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <circle cx="95" cy="67" r="6" fill="#e6c875" />
+    <circle cx="95" cy="67" r="10" fill="#e6c875" fill-opacity="0.2" />
+    <text x="115" y="72" fill="#f5f5f7" font-size="13" font-weight="600" letter-spacing="1.5">INFRASTRUCTURE &amp; RELEASE AUTOMATION // POWERSHELL &amp; WINRM</text>
+    <text x="690" y="72" fill="#71717a" font-size="12">SCOPE: REUSABLE PRODUCTION RELEASE SUITE FOR MONOLITHIC IIS/.NET APPS</text>
 
-    <rect x="1170" y="52" width="160" height="30" rx="6" fill="rgba(168,85,247,0.08)" stroke="rgba(168,85,247,0.3)" />
-    <text x="1185" y="72" fill="#c084fc" font-size="11" font-weight="600" letter-spacing="1">TSDB: 30D RETENTION</text>
+    <rect x="1200" y="52" width="140" height="30" rx="6" fill="rgba(230,200,117,0.08)" stroke="rgba(230,200,117,0.3)" />
+    <text x="1215" y="72" fill="#e6c875" font-size="11" font-weight="600" letter-spacing="1">ZERO CONFIG DRIFT</text>
 
-    <rect x="1350" y="52" width="170" height="30" rx="6" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.3)" />
-    <text x="1365" y="72" fill="#34d399" font-size="11" font-weight="600" letter-spacing="1">SCRAPE: 15S INTERVAL</text>
+    <rect x="1360" y="52" width="160" height="30" rx="6" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.3)" />
+    <text x="1375" y="72" fill="#34d399" font-size="11" font-weight="600" letter-spacing="1">ROLLBACK READY</text>
   </g>
 
-  <!-- Left Column: Prometheus Targets & PromQL Inspector -->
-  <g id="promql-panel" filter="url(#shadow3)">
-    <rect x="60" y="120" width="500" height="640" rx="18" fill="url(#cardGrad3)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-    
-    <!-- Panel Header -->
-    <text x="90" y="165" fill="#c084fc" font-size="14" font-weight="600" letter-spacing="2">PROMETHEUS V2.48 ENGINE</text>
-    <text x="90" y="188" fill="#71717a" font-size="11">ACTIVE SCRAPE TARGETS &amp; PROMQL TELEMETRY RULES</text>
-    <line x1="90" y1="205" x2="530" y2="205" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+  <!-- Left Half: PowerShell Automation Script & Execution Terminal -->
+  <g id="rel-terminal" filter="url(#shadowRel)">
+    <rect x="60" y="120" width="560" height="640" rx="18" fill="url(#cardGradRel)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <path d="M 60 138 C 60 128 68 120 78 120 L 602 120 C 612 120 620 128 620 138 L 620 166 L 60 166 Z" fill="#141424" />
+    <circle cx="88" cy="143" r="5" fill="#ef4444" opacity="0.8"/>
+    <circle cx="106" cy="143" r="5" fill="#f59e0b" opacity="0.8"/>
+    <circle cx="124" cy="143" r="5" fill="#10b981" opacity="0.8"/>
+    <text x="150" y="147" fill="#71717a" font-size="11">powershell - Invoke-EnterpriseRelease.ps1</text>
 
-    <!-- PromQL Query Box 1: CPU Utilization -->
-    <g transform="translate(90, 225)">
-      <rect x="0" y="0" width="440" height="90" rx="10" fill="#0c0915" stroke="rgba(168,85,247,0.3)" stroke-width="1" />
-      <text x="16" y="24" fill="#a855f7" font-size="10" font-weight="600">QUERY: CPU USAGE RATE % (LINUX CLUSTER)</text>
-      <text x="16" y="48" fill="#e6c875" font-size="11">100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)</text>
-      <text x="16" y="72" fill="#34d399" font-size="11">Evaluation: 14.2% across 8 hosts [Threshold: &lt; 85%]</text>
+    <g transform="translate(85, 195)" font-size="11.5" line-height="1.6">
+      <text y="0" fill="#71717a"># Automated IIS Release Framework with WinRM Orchestration</text>
+      <text y="24" fill="#e6c875" font-weight="600">PS C:\Ops&gt; .\Deploy-Release.ps1 -Environment "Production" -Nodes $Cluster</text>
+      <text y="50" fill="#38bdf8">[PHASE 1] PRE-DEPLOYMENT INTEGRITY CHECK</text>
+      <text y="72" fill="#a1a1aa">  * Validating WinRM connectivity to Node01, Node02 ... [OK]</text>
+      <text y="94" fill="#a1a1aa">  * Comparing appsettings.json against config schema ... [0 DRIFT]</text>
+      <text y="116" fill="#34d399">  * SHA-256 Checksum: e3b0c44298fc1c149afbf4c8996fb92427ae41e4 ... [MATCHED]</text>
+
+      <text y="150" fill="#38bdf8">[PHASE 2] AUTOMATED BACKUP &amp; DRAIN</text>
+      <text y="172" fill="#a1a1aa">  * Creating point-in-time snapshot: D:\Backups\Release_20260917_v4.2</text>
+      <text y="194" fill="#a1a1aa">  * Stopping IIS Application Pool "FintechCorePool" gracefully</text>
+      <text y="216" fill="#34d399">  * In-flight requests drained: 0 dropped transactions</text>
+
+      <text y="250" fill="#38bdf8">[PHASE 3] ATOMIC ARTIFACT EXTRACTION &amp; POOL RESTART</text>
+      <text y="272" fill="#a1a1aa">  * Copying binary release package via remote session</text>
+      <text y="294" fill="#a1a1aa">  * Starting IIS Application Pool &amp; Worker Process w3wp.exe</text>
+      <text y="316" fill="#34d399">  * Pool Status: Started (Worker PID 7108)</text>
+
+      <text y="350" fill="#e6c875" font-weight="600">[PHASE 4] PESTER SANITY TEST SUITE</text>
+      <text y="372" fill="#34d399">  ✔ [PASS] HTTP GET /healthcheck returns 200 OK in 14.2ms</text>
+      <text y="394" fill="#34d399">  ✔ [PASS] SQL Server DB Connection Pool initialized (20/20 active)</text>
+      <text y="416" fill="#34d399">  ✔ [PASS] Security headers validated in response</text>
+      <text y="440" fill="#10b981">[SUCCESS] Release completed in 2m 45s. Rollback trigger disarmed.</text>
+
+      <rect x="0" y="470" width="12" height="18" fill="#e6c875" opacity="0.8"/>
     </g>
 
-    <!-- PromQL Query Box 2: Windows IIS Requests -->
-    <g transform="translate(90, 330)">
-      <rect x="0" y="0" width="440" height="90" rx="10" fill="#0c0915" stroke="rgba(6,182,212,0.3)" stroke-width="1" />
-      <text x="16" y="24" fill="#06b6d4" font-size="10" font-weight="600">QUERY: WINDOWS IIS HTTP REQUEST RATE / SEC</text>
-      <text x="16" y="48" fill="#e6c875" font-size="11">sum(rate(windows_iis_requests_total{app="fintech"}[1m]))</text>
-      <text x="16" y="72" fill="#38bdf8" font-size="11">Evaluation: 3,420 req/s [Status: 200 OK: 99.98%]</text>
-    </g>
-
-    <!-- Targets Scrape Status Table -->
-    <g transform="translate(90, 440)">
-      <rect x="0" y="0" width="440" height="200" rx="10" fill="#0c0915" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
-      <text x="16" y="24" fill="#71717a" font-size="10" font-weight="600" letter-spacing="1">SCRAPE TARGET POOL</text>
-      <text x="360" y="24" fill="#34d399" font-size="10">ALL HEALTHY</text>
-      <line x1="16" y1="36" x2="424" y2="36" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
-
-      <!-- Target 1 -->
-      <circle cx="26" cy="56" r="4" fill="#10b981" />
-      <text x="40" y="60" fill="#f5f5f7" font-size="11">prod-linux-node-01:9100</text>
-      <text x="240" y="60" fill="#a1a1aa" font-size="10">node_exporter</text>
-      <text x="360" y="60" fill="#34d399" font-size="10">UP (1.2ms)</text>
-
-      <!-- Target 2 -->
-      <circle cx="26" cy="86" r="4" fill="#10b981" />
-      <text x="40" y="90" fill="#f5f5f7" font-size="11">prod-linux-node-02:9100</text>
-      <text x="240" y="90" fill="#a1a1aa" font-size="10">node_exporter</text>
-      <text x="360" y="90" fill="#34d399" font-size="10">UP (1.4ms)</text>
-
-      <!-- Target 3 -->
-      <circle cx="26" cy="116" r="4" fill="#10b981" />
-      <text x="40" y="120" fill="#f5f5f7" font-size="11">win-iis-cluster-01:9182</text>
-      <text x="240" y="120" fill="#a1a1aa" font-size="10">windows_exporter</text>
-      <text x="360" y="120" fill="#34d399" font-size="10">UP (3.8ms)</text>
-
-      <!-- Target 4 -->
-      <circle cx="26" cy="146" r="4" fill="#10b981" />
-      <text x="40" y="150" fill="#f5f5f7" font-size="11">win-iis-cluster-02:9182</text>
-      <text x="240" y="150" fill="#a1a1aa" font-size="10">windows_exporter</text>
-      <text x="360" y="150" fill="#34d399" font-size="10">UP (3.1ms)</text>
-
-      <!-- Target 5 -->
-      <circle cx="26" cy="176" r="4" fill="#10b981" />
-      <text x="40" y="180" fill="#f5f5f7" font-size="11">nginx-ingress-gateway:9113</text>
-      <text x="240" y="180" fill="#a1a1aa" font-size="10">nginx_prometheus</text>
-      <text x="360" y="180" fill="#34d399" font-size="10">UP (0.8ms)</text>
-    </g>
-
-    <!-- Bottom Alertmanager status -->
-    <rect x="90" y="660" width="440" height="70" rx="10" fill="rgba(16,185,129,0.06)" stroke="rgba(16,185,129,0.2)" />
-    <text x="110" y="688" fill="#34d399" font-size="11" font-weight="600">ALERTMANAGER STATUS: 0 FIRING // 0 SILENCED</text>
-    <text x="110" y="710" fill="#71717a" font-size="10">Slack + Email Webhook Receivers Active • Automated Incident Triage</text>
+    <rect x="80" y="695" width="520" height="45" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" />
+    <text x="100" y="722" fill="#a1a1aa" font-size="11">TOOLING: <tspan fill="#e6c875">PowerShell &amp; WinRM</tspan> | SAFEGUARD: <tspan fill="#34d399">Automated Backup &amp; Rollback</tspan></text>
   </g>
 
-  <!-- Right Area: Grafana Live Telemetry Dashboard Visuals -->
-  <g id="grafana-dashboard" filter="url(#shadow3)">
-    <rect x="590" y="120" width="950" height="640" rx="18" fill="url(#cardGrad3)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-    
-    <!-- Grafana Top Header -->
-    <text x="630" y="165" fill="#e6c875" font-size="14" font-weight="600" letter-spacing="2">GRAFANA DASHBOARD // SRE PRODUCTION TELEMETRY</text>
-    <text x="630" y="188" fill="#71717a" font-size="11">TIME RANGE: LAST 6 HOURS • REFRESH: 5S • HETEROGENEOUS CLUSTER OVERVIEW</text>
-    <line x1="630" y1="205" x2="1510" y2="205" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+  <!-- Right Half: Release Automation Workflow Architecture -->
+  <g id="rel-workflow" filter="url(#shadowRel)">
+    <rect x="650" y="120" width="890" height="640" rx="18" fill="url(#cardGradRel)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <text x="685" y="165" fill="#e6c875" font-size="14" font-weight="600" letter-spacing="2">AUTOMATED RELEASE LIFECYCLE WORKFLOW</text>
+    <text x="685" y="188" fill="#71717a" font-size="11">PRE-DEPLOY VALIDATION ➔ WINRM ORCHESTRATION ➔ SNAPSHOT BACKUP ➔ HEALTH AUDIT</text>
+    <line x1="685" y1="205" x2="1505" y2="205" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
 
-    <!-- Metric Panel 1: Cluster CPU Utilization (Line + Area) -->
-    <g transform="translate(630, 225)">
-      <rect x="0" y="0" width="420" height="240" rx="12" fill="#0d0917" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-      <text x="20" y="26" fill="#c084fc" font-size="11" font-weight="600">CPU UTILIZATION % (ALL HOSTS)</text>
-      <text x="360" y="26" fill="#34d399" font-size="12" font-weight="700">18.4%</text>
-
-      <!-- Graph Grid Lines -->
-      <line x1="20" y1="60" x2="400" y2="60" stroke="rgba(255,255,255,0.04)" stroke-dasharray="3 3"/>
-      <line x1="20" y1="100" x2="400" y2="100" stroke="rgba(255,255,255,0.04)" stroke-dasharray="3 3"/>
-      <line x1="20" y1="140" x2="400" y2="140" stroke="rgba(255,255,255,0.04)" stroke-dasharray="3 3"/>
-      <line x1="20" y1="180" x2="400" y2="180" stroke="rgba(255,255,255,0.04)" stroke-dasharray="3 3"/>
-
-      <!-- Area and Line Chart -->
-      <path d="M 20 180 L 60 170 L 100 175 L 140 145 L 180 155 L 220 120 L 260 135 L 300 115 L 340 130 L 380 125 L 400 130 L 400 200 L 20 200 Z" fill="url(#areaPurple)" />
-      <path d="M 20 180 L 60 170 L 100 175 L 140 145 L 180 155 L 220 120 L 260 135 L 300 115 L 340 130 L 380 125 L 400 130" fill="none" stroke="#a855f7" stroke-width="2.5" />
-      <circle cx="400" cy="130" r="4" fill="#a855f7" />
-
-      <!-- Baseline 2 -->
-      <path d="M 20 190 L 80 185 L 150 175 L 220 165 L 290 170 L 360 160 L 400 165" fill="none" stroke="#e6c875" stroke-width="1.5" opacity="0.6"/>
-
-      <text x="20" y="222" fill="#71717a" font-size="9">-6h</text>
-      <text x="200" y="222" fill="#71717a" font-size="9">-3h</text>
-      <text x="375" y="222" fill="#71717a" font-size="9">NOW</text>
+    <!-- Step 1: Pre-Deploy Checks -->
+    <g transform="translate(685, 235)">
+      <rect x="0" y="0" width="240" height="110" rx="12" fill="#131322" stroke="#e6c875" stroke-width="1.2" />
+      <text x="120" y="32" fill="#e6c875" font-size="11" text-anchor="middle" font-weight="700">01. PRE-DEPLOY CHECK</text>
+      <text x="120" y="55" fill="#f5f5f7" font-size="11" text-anchor="middle">Config Drift Inspection</text>
+      <text x="120" y="75" fill="#a1a1aa" font-size="10" text-anchor="middle">SHA-256 Hash Verification</text>
+      <text x="120" y="93" fill="#34d399" font-size="9" text-anchor="middle">WinRM Connectivity: Verified</text>
     </g>
 
-    <!-- Metric Panel 2: Memory & Working Set (Line + Area) -->
-    <g transform="translate(1070, 225)">
-      <rect x="0" y="0" width="440" height="240" rx="12" fill="#0d0917" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-      <text x="20" y="26" fill="#06b6d4" font-size="11" font-weight="600">CLUSTER MEMORY COMMITTED</text>
-      <text x="380" y="26" fill="#38bdf8" font-size="12" font-weight="700">42.8 GB</text>
+    <!-- Arrow 1 to 2 -->
+    <path d="M 925 290 L 975 290" stroke="url(#relFlow)" stroke-width="2" stroke-dasharray="4 3" />
 
-      <line x1="20" y1="60" x2="420" y2="60" stroke="rgba(255,255,255,0.04)" stroke-dasharray="3 3"/>
-      <line x1="20" y1="100" x2="420" y2="100" stroke="rgba(255,255,255,0.04)" stroke-dasharray="3 3"/>
-      <line x1="20" y1="140" x2="420" y2="140" stroke="rgba(255,255,255,0.04)" stroke-dasharray="3 3"/>
-      <line x1="20" y1="180" x2="420" y2="180" stroke="rgba(255,255,255,0.04)" stroke-dasharray="3 3"/>
-
-      <!-- Cyan Area Chart -->
-      <path d="M 20 160 L 60 155 L 120 150 L 180 145 L 240 140 L 300 135 L 360 130 L 420 125 L 420 200 L 20 200 Z" fill="url(#areaCyan)" />
-      <path d="M 20 160 L 60 155 L 120 150 L 180 145 L 240 140 L 300 135 L 360 130 L 420 125" fill="none" stroke="#06b6d4" stroke-width="2.5" />
-      <circle cx="420" cy="125" r="4" fill="#06b6d4" />
-
-      <text x="20" y="222" fill="#71717a" font-size="9">Total: 128 GB Pool</text>
-      <text x="360" y="222" fill="#34d399" font-size="9">Util: 33.4%</text>
+    <!-- Step 2: Automated Backup & Drain -->
+    <g transform="translate(980, 235)">
+      <rect x="0" y="0" width="240" height="110" rx="12" fill="#131322" stroke="#38bdf8" stroke-width="1.2" />
+      <text x="120" y="32" fill="#38bdf8" font-size="11" text-anchor="middle" font-weight="700">02. POINT-IN-TIME SNAPSHOT</text>
+      <text x="120" y="55" fill="#f5f5f7" font-size="11" text-anchor="middle">Automated App &amp; Config Backup</text>
+      <text x="120" y="75" fill="#a1a1aa" font-size="10" text-anchor="middle">Graceful Worker Drain</text>
+      <text x="120" y="93" fill="#34d399" font-size="9" text-anchor="middle">Zero Transaction Loss</text>
     </g>
 
-    <!-- Bottom Stat Row: 3 Gauges / Stat Cards -->
-    <g transform="translate(630, 485)">
-      <!-- Stat 1: Network Ingress -->
-      <g transform="translate(0, 0)">
-        <rect x="0" y="0" width="280" height="245" rx="12" fill="#0d0917" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-        <text x="20" y="30" fill="#71717a" font-size="10" font-weight="600">NETWORK I/O (RX / TX)</text>
-        <text x="20" y="65" fill="#34d399" font-size="28" font-weight="700">842 Mb/s</text>
-        <text x="20" y="90" fill="#a1a1aa" font-size="11">Peak: 1.2 Gb/s | Drop: 0%</text>
+    <!-- Arrow 2 to 3 -->
+    <path d="M 1220 290 L 1270 290" stroke="url(#relFlow)" stroke-width="2" stroke-dasharray="4 3" />
 
-        <!-- Mini Sparkline -->
-        <path d="M 20 160 L 60 150 L 100 155 L 140 130 L 180 140 L 220 120 L 260 125" fill="none" stroke="#34d399" stroke-width="2" />
-        <text x="20" y="200" fill="#71717a" font-size="10">NIC Interface: 10 Gbps SFP+</text>
-        <text x="20" y="220" fill="#38bdf8" font-size="10">Saturation: 8.4% (Nominal)</text>
-      </g>
-
-      <!-- Stat 2: Request Latency P99 -->
-      <g transform="translate(300, 0)">
-        <rect x="0" y="0" width="280" height="245" rx="12" fill="#0d0917" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-        <text x="20" y="30" fill="#71717a" font-size="10" font-weight="600">P99 HTTP LATENCY</text>
-        <text x="20" y="65" fill="#e6c875" font-size="28" font-weight="700">14.6 ms</text>
-        <text x="20" y="90" fill="#a1a1aa" font-size="11">SLA Target: &lt; 50.0 ms</text>
-
-        <path d="M 20 150 L 60 148 L 100 152 L 140 145 L 180 142 L 220 144 L 260 140" fill="none" stroke="#e6c875" stroke-width="2" />
-        <text x="20" y="200" fill="#71717a" font-size="10">P50: 3.2ms • P90: 8.1ms</text>
-        <text x="20" y="220" fill="#34d399" font-size="10">SLA Breach Margin: +35.4ms</text>
-      </g>
-
-      <!-- Stat 3: Production Availability -->
-      <g transform="translate(600, 0)">
-        <rect x="0" y="0" width="280" height="245" rx="12" fill="#0d0917" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-        <text x="20" y="30" fill="#71717a" font-size="10" font-weight="600">MONTHLY SLA AVAILABILITY</text>
-        <text x="20" y="65" fill="#10b981" font-size="28" font-weight="700">99.99%</text>
-        <text x="20" y="90" fill="#a1a1aa" font-size="11">Error Budget Left: 94.2%</text>
-
-        <!-- Circular gauge arc -->
-        <circle cx="140" cy="150" r="35" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="6" />
-        <circle cx="140" cy="150" r="35" fill="none" stroke="#10b981" stroke-width="6" stroke-dasharray="210 220" stroke-linecap="round" />
-        <text x="140" y="155" fill="#f5f5f7" font-size="13" font-weight="700" text-anchor="middle">PASS</text>
-
-        <text x="20" y="220" fill="#71717a" font-size="10" text-anchor="middle" dx="120">0 UNPLANNED OUTAGES</text>
-      </g>
+    <!-- Step 3: Remote Node Rollout -->
+    <g transform="translate(1275, 235)">
+      <rect x="0" y="0" width="235" height="110" rx="12" fill="#131322" stroke="#a855f7" stroke-width="1.2" />
+      <text x="117" y="32" fill="#c084fc" font-size="11" text-anchor="middle" font-weight="700">03. WINRM ROLLOUT</text>
+      <text x="117" y="55" fill="#f5f5f7" font-size="11" text-anchor="middle">Parallel Node Dispatch</text>
+      <text x="117" y="75" fill="#a1a1aa" font-size="10" text-anchor="middle">IIS App Pool Controlled Recycle</text>
+      <text x="117" y="93" fill="#34d399" font-size="9" text-anchor="middle">Fast Binary Overwrite</text>
     </g>
 
+    <!-- Downward Route to Step 4 & 5 -->
+    <path d="M 1390 345 L 1390 400 L 805 400 L 805 435" stroke="url(#relFlow)" stroke-width="2" stroke-dasharray="4 3" />
+
+    <!-- Step 4: Health Probes & Pester Tests -->
+    <g transform="translate(685, 440)">
+      <rect x="0" y="0" width="370" height="120" rx="12" fill="#131322" stroke="#10b981" stroke-width="1.5" />
+      <text x="185" y="32" fill="#34d399" font-size="11" text-anchor="middle" font-weight="700">04. POST-DEPLOY PESTER AUDIT</text>
+      <text x="185" y="55" fill="#f5f5f7" font-size="12" text-anchor="middle">Automated Smoke Tests &amp; DB Probes</text>
+      <text x="185" y="75" fill="#a1a1aa" font-size="10" text-anchor="middle">HTTP Endpoint Latency &lt; 25ms • DB Pool Verified</text>
+      <text x="185" y="95" fill="#34d399" font-size="9" text-anchor="middle">ALL 12 TESTS PASSED</text>
+    </g>
+
+    <!-- Arrow 4 to 5 -->
+    <path d="M 1055 500 L 1145 500" stroke="url(#relFlow)" stroke-width="2" stroke-dasharray="4 3" />
+
+    <!-- Step 5: Rollback Safeguard Engine -->
+    <g transform="translate(1150, 440)">
+      <rect x="0" y="0" width="360" height="120" rx="12" fill="#180f14" stroke="#fb7185" stroke-width="1.2" />
+      <text x="180" y="32" fill="#fb7185" font-size="11" text-anchor="middle" font-weight="700">05. SAFEGUARD &amp; ZERO-TOUCH ROLLBACK</text>
+      <text x="180" y="55" fill="#f5f5f7" font-size="11" text-anchor="middle">Automatic Instant Restoration</text>
+      <text x="180" y="75" fill="#a1a1aa" font-size="10" text-anchor="middle">Reverts to Snapshot in &lt; 30s upon Failure</text>
+      <text x="180" y="95" fill="#34d399" font-size="9" text-anchor="middle">Production Safety Certified</text>
+    </g>
+
+    <!-- Bottom Stat Summary Strip -->
+    <g transform="translate(685, 595)">
+      <rect x="0" y="0" width="825" height="135" rx="12" fill="#090911" stroke="rgba(255,255,255,0.06)" />
+      
+      <g transform="translate(30, 24)">
+        <text y="0" fill="#71717a" font-size="10">AVERAGE RELEASE DURATION</text>
+        <text y="24" fill="#34d399" font-size="18" font-weight="700">2m 45s</text>
+        <text y="42" fill="#52525b" font-size="9">100% automated script execution</text>
+      </g>
+      <line x1="260" y1="15" x2="260" y2="75" stroke="rgba(255,255,255,0.06)" />
+
+      <g transform="translate(290, 24)">
+        <text y="0" fill="#71717a" font-size="10">CONFIGURATION DRIFT</text>
+        <text y="24" fill="#e6c875" font-size="18" font-weight="700">0.00%</text>
+        <text y="42" fill="#52525b" font-size="9">Strict schema &amp; hash matching</text>
+      </g>
+      <line x1="550" y1="15" x2="550" y2="75" stroke="rgba(255,255,255,0.06)" />
+
+      <g transform="translate(580, 24)">
+        <text y="0" fill="#71717a" font-size="10">FAILOVER / ROLLBACK RTO</text>
+        <text y="24" fill="#38bdf8" font-size="18" font-weight="700">&lt; 30 Seconds</text>
+        <text y="42" fill="#52525b" font-size="9">Instant rollback on test failure</text>
+      </g>
+
+      <!-- Bottom audit strip -->
+      <rect x="30" y="85" width="765" height="35" rx="6" fill="rgba(255,255,255,0.03)" />
+      <text x="45" y="107" fill="#a1a1aa" font-size="10">FRAMEWORK: <tspan fill="#e6c875">PowerShell / WinRM / Pester</tspan> • Audit trail logged to central operations vault</text>
+    </g>
   </g>
 
   <!-- Bottom Brand Watermark -->
   <text x="60" y="810" fill="#52525b" font-size="12" letter-spacing="3">SUDHARSAN S // SRE &amp; DEVOPS PORTFOLIO</text>
-  <text x="1540" y="810" fill="#52525b" font-size="12" text-anchor="end">CENTRALIZED INFRASTRUCTURE OBSERVABILITY</text>
+  <text x="1540" y="810" fill="#52525b" font-size="12" text-anchor="end">REUSABLE PRODUCTION RELEASE AUTOMATION</text>
 </svg>

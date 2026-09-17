@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
-import { GitPullRequest, Cloud, Box, Activity, Terminal, Server, Shield, RefreshCw, Sparkles } from 'lucide-react';
+import { GitPullRequest, Cloud, Activity, Terminal, Server, Shield, Sparkles } from 'lucide-react';
 import { skillsData, type SkillGroup } from '../data/portfolioData';
 import { sound } from '../utils/audio';
 
 const iconMap: Record<string, React.ReactNode> = {
+  'Cloud & Infrastructure': <Cloud size={18} className="text-sky-400" />,
   'DevOps & CI/CD': <GitPullRequest size={18} className="text-[#e6c875]" />,
-  'Cloud Infrastructure': <Cloud size={18} className="text-sky-400" />,
-  'Containers & Orchestration': <Box size={18} className="text-emerald-400" />,
-  'Observability & Metrics': <Activity size={18} className="text-purple-400" />,
-  'Linux Administration': <Terminal size={18} className="text-amber-400" />,
-  'Windows & Application Hosting': <Server size={18} className="text-pink-400" />,
-  'Web Routing & Security': <Shield size={18} className="text-rose-400" />,
-  'Operations & Reliability': <RefreshCw size={18} className="text-teal-400" />,
+  'Monitoring & Observability': <Activity size={18} className="text-purple-400" />,
+  'Automation & Scripting': <Terminal size={18} className="text-amber-400" />,
+  'Application Infrastructure': <Server size={18} className="text-emerald-400" />,
+  'Security & Reliability': <Shield size={18} className="text-rose-400" />,
 };
 
 export const Skills: React.FC = () => {

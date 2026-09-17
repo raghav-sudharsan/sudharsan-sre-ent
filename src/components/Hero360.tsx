@@ -182,11 +182,11 @@ export const Hero360: React.FC = () => {
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#e6c875]" />
               <span className="text-[11px] font-mono tracking-[0.25em] text-[#e6c875] uppercase">
-                SITE RELIABILITY ENGINEER
+                SUDHARSAN
               </span>
             </div>
             <p className="text-xs font-mono text-[#a1a1aa] leading-relaxed hidden sm:block">
-              PRODUCTION × OBSERVABILITY × DEVOPS
+              DEVOPS ENGINEER | SRE | CLOUD ENGINEER
             </p>
           </div>
 
@@ -229,13 +229,13 @@ export const Hero360: React.FC = () => {
           <div className="max-w-lg pointer-events-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-[11px] font-mono text-[#e6c875] uppercase tracking-widest mb-3">
               <Cpu size={12} />
-              <span>SRE & Production Operations</span>
+              <span>DevOps × SRE × Cloud Engineering</span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-editorial-serif font-light text-[#f5f5f7] leading-[1.12] mb-4 tracking-tight">
-              Engineering resilient systems that <span className="italic font-normal text-[#e6c875]">never fail.</span>
+              Building reliable infrastructure, <span className="italic font-normal text-[#e6c875]">automating workflows.</span>
             </h1>
             <p className="text-xs sm:text-sm font-sans text-[#a1a1aa] leading-relaxed max-w-md font-light">
-              DevOps & Site Reliability Engineer with 3+ years supporting business-critical fintech platforms across production, infrastructure, and multi-cloud environments.
+              Supporting production systems across cloud, Linux, Windows, and application platforms with an engineering-first reliability mindset.
             </p>
           </div>
 

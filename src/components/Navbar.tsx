@@ -66,7 +66,7 @@ export const Navbar: React.FC = () => {
               {personalInfo.brandMonogram}
             </span>
             <span className="hidden md:inline-block text-[10px] font-mono tracking-widest text-[#a1a1aa] uppercase pl-2 border-l border-white/20">
-              SRE & DevOps Engineer
+              DevOps | SRE | Cloud Engineer
             </span>
           </a>
 
