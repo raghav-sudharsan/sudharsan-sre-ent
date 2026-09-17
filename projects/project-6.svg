@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" style="background:#07070a; font-family:'JetBrains Mono', 'SF Pro Display', -apple-system, monospace;">
+  <defs>
+    <radialGradient id="bgGlow6" cx="45%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#064e3b" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#091410" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#050508" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="emeraldGlow6" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldGlow6" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e6c875" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#e6c875" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow6" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+    <linearGradient id="cardGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121c17" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0a100d" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="streamGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e6c875"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <pattern id="grid6" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bgGlow6)" />
+  <rect width="1600" height="900" fill="url(#grid6)" />
+  <circle cx="450" cy="380" r="280" fill="url(#emeraldGlow6)" />
+  <circle cx="1150" cy="400" r="280" fill="url(#goldGlow6)" />
+
+  <!-- Top System Header Bar -->
+  <g id="top-bar">
+    <rect x="60" y="40" width="1480" height="54" rx="12" fill="#0d1410" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <circle cx="95" cy="67" r="6" fill="#10b981" />
+    <circle cx="95" cy="67" r="10" fill="#10b981" fill-opacity="0.2" />
+    <text x="115" y="72" fill="#f5f5f7" font-size="13" font-weight="600" letter-spacing="1.5">MSME APPLICATION // JAVA &amp; REACT DEPLOYMENT ON LINUX</text>
+    <text x="690" y="72" fill="#71717a" font-size="12">RUNTIME: LINUX HOSTS • SYSTEMD SERVICE SUPERVISION • NGINX ROUTING</text>
+
+    <rect x="1200" y="52" width="140" height="30" rx="6" fill="rgba(230,200,117,0.08)" stroke="rgba(230,200,117,0.3)" />
+    <text x="1215" y="72" fill="#e6c875" font-size="11" font-weight="600" letter-spacing="1">SYSTEMD ACTIVE</text>
+
+    <rect x="1360" y="52" width="160" height="30" rx="6" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.3)" />
+    <text x="1375" y="72" fill="#34d399" font-size="11" font-weight="600" letter-spacing="1">HEALTH: 200 OK</text>
+  </g>
+
+  <!-- Left Half: Linux Systemd & Health Probe Terminal -->
+  <g id="msme-terminal" filter="url(#shadow6)">
+    <rect x="60" y="120" width="560" height="640" rx="18" fill="url(#cardGrad6)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <path d="M 60 138 C 60 128 68 120 78 120 L 602 120 C 612 120 620 128 620 138 L 620 166 L 60 166 Z" fill="#131e18" />
+    <circle cx="88" cy="143" r="5" fill="#ef4444" opacity="0.8"/>
+    <circle cx="106" cy="143" r="5" fill="#f59e0b" opacity="0.8"/>
+    <circle cx="124" cy="143" r="5" fill="#10b981" opacity="0.8"/>
+    <text x="150" y="147" fill="#71717a" font-size="11">bash - sudharsan@msme-prod-host: ~</text>
+
+    <g transform="translate(85, 195)" font-size="11.5" line-height="1.6">
+      <text y="0" fill="#e6c875" font-weight="600">$ systemctl status msme-fintech.service</text>
+      <text y="24" fill="#f5f5f7">● msme-fintech.service - MSME Core Application Service</text>
+      <text y="48" fill="#a1a1aa">   Loaded: loaded (/etc/systemd/system/msme-fintech.service; enabled)</text>
+      <text y="72" fill="#34d399" font-weight="600">   Active: active (running) since Thu 2026-09-17 10:15:00 IST</text>
+      <text y="96" fill="#a1a1aa"> Main PID: 5821 (java) • Tasks: 42 • Memory: 1.2G (Limit: 2.5G)</text>
+      <text y="120" fill="#71717a">  CGroup: /system.slice/msme-fintech.service</text>
+      <text y="140" fill="#71717a">          └─5821 /usr/bin/java -jar /opt/msme/msme-backend.jar</text>
+
+      <text y="175" fill="#38bdf8">[AZURE DEVOPS ARTIFACT PROMOTION]</text>
+      <text y="198" fill="#a1a1aa">$ tar -xzf msme-build-v3.2.1.tar.gz -C /opt/msme/</text>
+      <text y="220" fill="#34d399">✔ Extraction verified: Static React bundle &amp; Java .jar package</text>
+
+      <text y="255" fill="#38bdf8">[NGINX REVERSE PROXY ROUTING]</text>
+      <text y="278" fill="#a1a1aa">$ nginx -t &amp;&amp; systemctl reload nginx</text>
+      <text y="300" fill="#34d399">✔ Location /      -&gt; Static React SPA (/var/www/msme-ui)</text>
+      <text y="322" fill="#34d399">✔ Location /api/  -&gt; proxy_pass http://127.0.0.1:8080 (Java API)</text>
+
+      <text y="360" fill="#e6c875" font-weight="600">$ /opt/msme/scripts/validate_runtime.sh</text>
+      <text y="384" fill="#34d399">[ASSERTION 1] HTTP GET /actuator/health ... {"status":"UP"}</text>
+      <text y="408" fill="#34d399">[ASSERTION 2] DB Connectivity &amp; HikariCP pool initialized</text>
+      <text y="432" fill="#34d399">[ASSERTION 3] React UI static bundle sha256 confirmed</text>
+      <text y="456" fill="#10b981">[DEPLOY COMPLETE] Environment ready for production traffic.</text>
+
+      <rect x="0" y="485" width="12" height="18" fill="#10b981" opacity="0.8"/>
+    </g>
+
+    <rect x="80" y="695" width="520" height="45" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" />
+    <text x="100" y="722" fill="#a1a1aa" font-size="11">STACK: <tspan fill="#e6c875">Java + React + Linux</tspan> | SUPERVISOR: <tspan fill="#34d399">Systemd Daemon</tspan></text>
+  </g>
+
+  <!-- Right Half: MSME Application Architecture Diagram -->
+  <g id="msme-architecture" filter="url(#shadow6)">
+    <rect x="650" y="120" width="890" height="640" rx="18" fill="url(#cardGrad6)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <text x="685" y="165" fill="#10b981" font-size="14" font-weight="600" letter-spacing="2">MSME APPLICATION INFRASTRUCTURE</text>
+    <text x="685" y="188" fill="#71717a" font-size="11">AZURE ARTIFACTS ➔ LINUX DEPLOYMENT ➔ SYSTEMD SUPERVISION ➔ NGINX REVERSE PROXY</text>
+    <line x1="685" y1="205" x2="1505" y2="205" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+
+    <!-- Step 1: Azure DevOps Pipeline Artifact -->
+    <g transform="translate(685, 235)">
+      <rect x="0" y="0" width="240" height="110" rx="12" fill="#0e1713" stroke="#38bdf8" stroke-width="1.2" />
+      <text x="120" y="32" fill="#38bdf8" font-size="11" text-anchor="middle" font-weight="700">01. CI/CD BUILD ARTIFACTS</text>
+      <text x="120" y="55" fill="#f5f5f7" font-size="11" text-anchor="middle">Azure DevOps &amp; TFS</text>
+      <text x="120" y="75" fill="#a1a1aa" font-size="10" text-anchor="middle">Signed Java JAR + React SPA</text>
+      <text x="120" y="93" fill="#34d399" font-size="9" text-anchor="middle">Versioned Package: v3.2.1</text>
+    </g>
+
+    <!-- Arrow 1 to 2 -->
+    <path d="M 925 290 L 975 290" stroke="url(#streamGreen)" stroke-width="2" stroke-dasharray="4 3" />
+
+    <!-- Step 2: Linux Host & Ingress Nginx -->
+    <g transform="translate(980, 235)">
+      <rect x="0" y="0" width="240" height="110" rx="12" fill="#0e1713" stroke="#e6c875" stroke-width="1.2" />
+      <text x="120" y="32" fill="#e6c875" font-size="11" text-anchor="middle" font-weight="700">02. NGINX REVERSE PROXY</text>
+      <text x="120" y="55" fill="#f5f5f7" font-size="11" text-anchor="middle">SSL/TLS Termination</text>
+      <text x="120" y="75" fill="#a1a1aa" font-size="10" text-anchor="middle">Static Asset Cache &amp; Proxy Pass</text>
+      <text x="120" y="93" fill="#34d399" font-size="9" text-anchor="middle">Port 80 / 443 Strict</text>
+    </g>
+
+    <!-- Arrow 2 to 3 -->
+    <path d="M 1220 290 L 1270 290" stroke="url(#streamGreen)" stroke-width="2" stroke-dasharray="4 3" />
+
+    <!-- Step 3: React Static Frontend UI -->
+    <g transform="translate(1275, 235)">
+      <rect x="0" y="0" width="235" height="110" rx="12" fill="#0e1713" stroke="#38bdf8" stroke-width="1.2" />
+      <text x="117" y="32" fill="#38bdf8" font-size="11" text-anchor="middle" font-weight="700">03. REACT FRONTEND</text>
+      <text x="117" y="55" fill="#f5f5f7" font-size="11" text-anchor="middle">Static SPA Bundle</text>
+      <text x="117" y="75" fill="#a1a1aa" font-size="10" text-anchor="middle">Optimized Web Assets</text>
+      <text x="117" y="93" fill="#34d399" font-size="9" text-anchor="middle">Client Rendering</text>
+    </g>
+
+    <!-- Downward route to Step 4 & 5 -->
+    <path d="M 1390 345 L 1390 400 L 805 400 L 805 435" stroke="url(#streamGreen)" stroke-width="2" stroke-dasharray="4 3" />
+
+    <!-- Step 4: Java Application Runtime -->
+    <g transform="translate(685, 440)">
+      <rect x="0" y="0" width="370" height="120" rx="12" fill="#0e1713" stroke="#10b981" stroke-width="1.5" />
+      <text x="185" y="32" fill="#10b981" font-size="11" text-anchor="middle" font-weight="700">04. JAVA APPLICATION RUNTIME</text>
+      <text x="185" y="55" fill="#f5f5f7" font-size="12" text-anchor="middle">OpenJDK 17 LTS • MSME Services</text>
+      <text x="185" y="75" fill="#a1a1aa" font-size="10" text-anchor="middle">Port 8080 • Systemd Process Supervision</text>
+      <text x="185" y="95" fill="#34d399" font-size="9" text-anchor="middle">ACTIVE (RUNNING) • PID 5821</text>
+    </g>
+
+    <!-- Arrow 4 to 5 -->
+    <path d="M 1055 500 L 1145 500" stroke="url(#streamGreen)" stroke-width="2" stroke-dasharray="4 3" />
+
+    <!-- Step 5: Validation Probes & Telemetry -->
+    <g transform="translate(1150, 440)">
+      <rect x="0" y="0" width="360" height="120" rx="12" fill="#0e1713" stroke="#a855f7" stroke-width="1.2" />
+      <text x="180" y="32" fill="#c084fc" font-size="11" text-anchor="middle" font-weight="700">05. VALIDATION PROBES &amp; PROMETHEUS</text>
+      <text x="180" y="55" fill="#f5f5f7" font-size="11" text-anchor="middle">Automated Bash Sanity Suite</text>
+      <text x="180" y="75" fill="#a1a1aa" font-size="10" text-anchor="middle">node_exporter Host Telemetry</text>
+      <text x="180" y="95" fill="#34d399" font-size="9" text-anchor="middle">HTTP 200 OK • Memory Monitored</text>
+    </g>
+
+    <!-- Bottom Stat Summary Strip -->
+    <g transform="translate(685, 595)">
+      <rect x="0" y="0" width="825" height="135" rx="12" fill="#090f0c" stroke="rgba(255,255,255,0.06)" />
+      
+      <g transform="translate(30, 24)">
+        <text y="0" fill="#71717a" font-size="10">DEPLOYMENT CYCLE</text>
+        <text y="24" fill="#34d399" font-size="18" font-weight="700">Automated Rollout</text>
+        <text y="42" fill="#52525b" font-size="9">Azure DevOps / TFS integration</text>
+      </g>
+      <line x1="260" y1="15" x2="260" y2="75" stroke="rgba(255,255,255,0.06)" />
+
+      <g transform="translate(290, 24)">
+        <text y="0" fill="#71717a" font-size="10">SUPERVISION ENGINE</text>
+        <text y="24" fill="#e6c875" font-size="18" font-weight="700">Linux Systemd</text>
+        <text y="42" fill="#52525b" font-size="9">Auto-restart &amp; resource bounds</text>
+      </g>
+      <line x1="550" y1="15" x2="550" y2="75" stroke="rgba(255,255,255,0.06)" />
+
+      <g transform="translate(580, 24)">
+        <text y="0" fill="#71717a" font-size="10">REVERSE PROXY</text>
+        <text y="24" fill="#38bdf8" font-size="18" font-weight="700">Nginx / SSL</text>
+        <text y="42" fill="#52525b" font-size="9">Path-based routing to UI &amp; API</text>
+      </g>
+
+      <rect x="30" y="85" width="765" height="35" rx="6" fill="rgba(255,255,255,0.03)" />
+      <text x="45" y="107" fill="#a1a1aa" font-size="10">OPERATIONAL ASSURANCE: <tspan fill="#34d399">Standardized Linux application hosting</tspan> • Post-deployment validation scripts</text>
+    </g>
+  </g>
+
+  <!-- Bottom Brand Watermark -->
+  <text x="60" y="810" fill="#52525b" font-size="12" letter-spacing="3">SUDHARSAN S // SRE &amp; DEVOPS PORTFOLIO</text>
+  <text x="1540" y="810" fill="#52525b" font-size="12" text-anchor="end">MSME APPLICATION DEPLOYMENT &amp; RUNTIME</text>
+</svg>

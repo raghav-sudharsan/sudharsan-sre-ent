@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" style="background:#07070a; font-family:'JetBrains Mono', 'SF Pro Display', -apple-system, monospace;">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bgGlow5" cx="65%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#451a03" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#120c06" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#050508" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="amberGlow5" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blueGlow5" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="shadow5" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+
+    <linearGradient id="cardGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1610" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0e0a06" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Grid -->
+    <pattern id="grid5" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bgGlow5)" />
+  <rect width="1600" height="900" fill="url(#grid5)" />
+
+  <circle cx="400" cy="380" r="280" fill="url(#amberGlow5)" />
+  <circle cx="1180" cy="420" r="300" fill="url(#blueGlow5)" />
+
+  <!-- Top System Header Bar -->
+  <g id="top-bar">
+    <rect x="60" y="40" width="1480" height="54" rx="12" fill="#140f09" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <circle cx="95" cy="67" r="6" fill="#f59e0b" />
+    <circle cx="95" cy="67" r="10" fill="#f59e0b" fill-opacity="0.2" />
+    <text x="115" y="72" fill="#f5f5f7" font-size="13" font-weight="600" letter-spacing="1.5">AWS CLOUD AUTOMATION // RECURRING INVENTORY &amp; AUDIT TRACKER</text>
+    <text x="730" y="72" fill="#71717a" font-size="12">SCHEDULE: CRON 0 6 * * * • REGION: AP-SOUTH-1 &amp; GLOBAL</text>
+
+    <rect x="1170" y="52" width="160" height="30" rx="6" fill="rgba(245,158,11,0.08)" stroke="rgba(245,158,11,0.3)" />
+    <text x="1185" y="72" fill="#fbbf24" font-size="11" font-weight="600" letter-spacing="1">AWS CLI V2 ACTIVE</text>
+
+    <rect x="1350" y="52" width="170" height="30" rx="6" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.3)" />
+    <text x="1365" y="72" fill="#34d399" font-size="11" font-weight="600" letter-spacing="1">ORPHAN ASSETS: 0</text>
+  </g>
+
+  <!-- Left Half: Bash Scripting & CLI Execution Terminal -->
+  <g id="cli-terminal" filter="url(#shadow5)">
+    <rect x="60" y="120" width="620" height="640" rx="18" fill="url(#cardGrad5)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    
+    <!-- Terminal Header -->
+    <path d="M 60 138 C 60 128 68 120 78 120 L 662 120 C 672 120 680 128 680 138 L 680 166 L 60 166 Z" fill="#19120a" />
+    <circle cx="88" cy="143" r="5" fill="#ef4444" opacity="0.8"/>
+    <circle cx="106" cy="143" r="5" fill="#f59e0b" opacity="0.8"/>
+    <circle cx="124" cy="143" r="5" fill="#10b981" opacity="0.8"/>
+    <text x="150" y="147" fill="#71717a" font-size="11">bash - ./aws_resource_tracker.sh (Daily Automation)</text>
+
+    <!-- Script Content -->
+    <g transform="translate(85, 195)" font-size="11.5" line-height="1.6">
+      <text y="0" fill="#71717a">#!/usr/bin/env bash</text>
+      <text y="24" fill="#71717a"># Author: Sudharsan S (SRE) - Automated AWS Audit Utility</text>
+      <text y="48" fill="#e6c875" font-weight="600">set -euo pipefail</text>
+      
+      <text y="80" fill="#38bdf8">echo "[+] DISCOVERING AWS EC2 INSTANCES..."</text>
+      <text y="104" fill="#f5f5f7">aws ec2 describe-instances \</text>
+      <text y="124" fill="#a1a1aa">  --query 'Reservations[*].Instances[*].[InstanceId,State.Name,InstanceType]' \</text>
+      <text y="144" fill="#a1a1aa">  --output table &gt;&gt; /var/reports/aws_inventory.log</text>
+
+      <text y="176" fill="#38bdf8">echo "[+] AUDITING S3 BUCKETS &amp; PUBLIC ACCESS..."</text>
+      <text y="200" fill="#f5f5f7">aws s3api list-buckets --query 'Buckets[*].Name' --output json</text>
+      <text y="224" fill="#34d399">✔ 18/18 Buckets Verified: PublicAccessBlock ACTIVE</text>
+
+      <text y="256" fill="#38bdf8">echo "[+] DISCOVERING IAM USERS &amp; ACCESS KEYS..."</text>
+      <text y="280" fill="#f5f5f7">aws iam list-users --query 'Users[*].[UserName,CreateDate]'</text>
+      <text y="304" fill="#34d399">✔ Zero unrotated access keys older than 90 days</text>
+
+      <text y="336" fill="#38bdf8">echo "[+] AUDITING UNATTACHED EBS VOLUMES (COST LEAKS)..."</text>
+      <text y="360" fill="#f5f5f7">aws ec2 describe-volumes --filters Name=status,Values=available</text>
+      <text y="384" fill="#10b981">✔ 0 Unattached volumes found - Clean bill</text>
+
+      <text y="420" fill="#e6c875" font-weight="600">[CRON DAEMON] 0 6 * * * /opt/scripts/aws_tracker.sh</text>
+      <text y="444" fill="#a1a1aa">Report published to S3 audit bucket &amp; emailed to ops@craftsilicon.com</text>
+      <text y="468" fill="#71717a">Execution elapsed time: 24.2 seconds • API calls: 14</text>
+
+      <rect x="0" y="495" width="12" height="18" fill="#f59e0b" opacity="0.8"/>
+    </g>
+
+    <!-- Terminal Footer Badge -->
+    <rect x="80" y="695" width="580" height="45" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" />
+    <text x="100" y="722" fill="#a1a1aa" font-size="11">SECURITY: <tspan fill="#e6c875">IAM INSTANCE PROFILE</tspan> | PRIVILEGE: <tspan fill="#34d399">READ-ONLY AUDIT ROLE</tspan></text>
+  </g>
+
+  <!-- Right Half: Cloud Infrastructure Inventory Cards -->
+  <g id="inventory-grid" filter="url(#shadow5)">
+    <rect x="710" y="120" width="830" height="640" rx="18" fill="url(#cardGrad5)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    
+    <text x="745" y="165" fill="#f59e0b" font-size="14" font-weight="600" letter-spacing="2">AWS INFRASTRUCTURE AUDIT OVERVIEW</text>
+    <text x="745" y="188" fill="#71717a" font-size="11">CENTRALIZED REGIONAL INVENTORY • INSTANT RECONCILIATION SUMMARY</text>
+    <line x1="745" y1="205" x2="1505" y2="205" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+
+    <!-- Resource Card 1: EC2 Compute -->
+    <g transform="translate(745, 230)">
+      <rect x="0" y="0" width="365" height="150" rx="14" fill="#120e0a" stroke="#f59e0b" stroke-width="1.2" />
+      <circle cx="32" cy="32" r="14" fill="rgba(245,158,11,0.15)" />
+      <text x="32" y="37" fill="#f59e0b" font-size="11" text-anchor="middle">EC2</text>
+      <text x="56" y="37" fill="#f5f5f7" font-size="13" font-weight="700">AMAZON EC2 COMPUTE</text>
+      <text x="285" y="37" fill="#34d399" font-size="11" font-weight="600">24 RUNNING</text>
+
+      <text x="20" y="70" fill="#a1a1aa" font-size="11">Production Instances: <tspan fill="#f5f5f7">16 (m5.large / c5.xlarge)</tspan></text>
+      <text x="20" y="92" fill="#a1a1aa" font-size="11">Staging / Utility: <tspan fill="#f5f5f7">8 (t3.medium)</tspan></text>
+      <text x="20" y="114" fill="#a1a1aa" font-size="11">Tagging Compliance: <tspan fill="#34d399">100% (Environment, Owner)</tspan></text>
+      <text x="20" y="134" fill="#71717a" font-size="10">Auto-Scaling Groups: 4 Active</text>
+    </g>
+
+    <!-- Resource Card 2: S3 Storage -->
+    <g transform="translate(1135, 230)">
+      <rect x="0" y="0" width="365" height="150" rx="14" fill="#120e0a" stroke="#10b981" stroke-width="1.2" />
+      <circle cx="32" cy="32" r="14" fill="rgba(16,185,129,0.15)" />
+      <text x="32" y="37" fill="#10b981" font-size="11" text-anchor="middle">S3</text>
+      <text x="56" y="37" fill="#f5f5f7" font-size="13" font-weight="700">AMAZON S3 STORAGE</text>
+      <text x="285" y="37" fill="#34d399" font-size="11" font-weight="600">18 BUCKETS</text>
+
+      <text x="20" y="70" fill="#a1a1aa" font-size="11">Public Access Block: <tspan fill="#34d399">18 / 18 ENABLED</tspan></text>
+      <text x="20" y="92" fill="#a1a1aa" font-size="11">Default Encryption: <tspan fill="#e6c875">AES-256 / KMS</tspan></text>
+      <text x="20" y="114" fill="#a1a1aa" font-size="11">Lifecycle Policies: <tspan fill="#f5f5f7">Archival to Glacier</tspan></text>
+      <text x="20" y="134" fill="#71717a" font-size="10">Bucket Versioning: Enabled on 12 critical</text>
+    </g>
+
+    <!-- Resource Card 3: IAM Security -->
+    <g transform="translate(745, 405)">
+      <rect x="0" y="0" width="365" height="150" rx="14" fill="#120e0a" stroke="#38bdf8" stroke-width="1.2" />
+      <circle cx="32" cy="32" r="14" fill="rgba(56,189,248,0.15)" />
+      <text x="32" y="37" fill="#38bdf8" font-size="11" text-anchor="middle">IAM</text>
+      <text x="56" y="37" fill="#f5f5f7" font-size="13" font-weight="700">AWS IAM IDENTITIES</text>
+      <text x="290" y="37" fill="#38bdf8" font-size="11" font-weight="600">42 ROLES</text>
+
+      <text x="20" y="70" fill="#a1a1aa" font-size="11">Human IAM Users: <tspan fill="#f5f5f7">16 with Strict MFA</tspan></text>
+      <text x="20" y="92" fill="#a1a1aa" font-size="11">Service Roles: <tspan fill="#f5f5f7">26 Least-Privilege Policies</tspan></text>
+      <text x="20" y="114" fill="#a1a1aa" font-size="11">Root Account Access: <tspan fill="#34d399">LOCKED + Hardware MFA</tspan></text>
+      <text x="20" y="134" fill="#71717a" font-size="10">Credential Rotation: Auto-audited</text>
+    </g>
+
+    <!-- Resource Card 4: VPC Networking -->
+    <g transform="translate(1135, 405)">
+      <rect x="0" y="0" width="365" height="150" rx="14" fill="#120e0a" stroke="#c084fc" stroke-width="1.2" />
+      <circle cx="32" cy="32" r="14" fill="rgba(192,132,252,0.15)" />
+      <text x="32" y="37" fill="#c084fc" font-size="11" text-anchor="middle">VPC</text>
+      <text x="56" y="37" fill="#f5f5f7" font-size="13" font-weight="700">VPC &amp; NETWORKING</text>
+      <text x="295" y="37" fill="#c084fc" font-size="11" font-weight="600">4 VPCS</text>
+
+      <text x="20" y="70" fill="#a1a1aa" font-size="11">Subnets: <tspan fill="#f5f5f7">16 (Public + Private)</tspan></text>
+      <text x="20" y="92" fill="#a1a1aa" font-size="11">NAT Gateways: <tspan fill="#f5f5f7">4 High-Availability</tspan></text>
+      <text x="20" y="114" fill="#a1a1aa" font-size="11">Security Groups: <tspan fill="#34d399">No 0.0.0.0/0 on SSH/RDP</tspan></text>
+      <text x="20" y="134" fill="#71717a" font-size="10">VPC Flow Logs: Streaming to CloudWatch</text>
+    </g>
+
+    <!-- Bottom Optimization Report Bar -->
+    <g transform="translate(745, 580)">
+      <rect x="0" y="0" width="755" height="145" rx="12" fill="#0b0805" stroke="rgba(255,255,255,0.06)" />
+      
+      <g transform="translate(30, 24)">
+        <text y="0" fill="#71717a" font-size="10" font-weight="600">COST OPTIMIZATION SAVINGS</text>
+        <text y="26" fill="#34d399" font-size="22" font-weight="700">$1,420 / mo</text>
+        <text y="46" fill="#a1a1aa" font-size="10">Idle resources detected &amp; cleaned</text>
+      </g>
+
+      <line x1="280" y1="20" x2="280" y2="125" stroke="rgba(255,255,255,0.06)" />
+
+      <g transform="translate(310, 24)">
+        <text y="0" fill="#71717a" font-size="10" font-weight="600">MANUAL AUDIT HOURS SAVED</text>
+        <text y="26" fill="#e6c875" font-size="22" font-weight="700">12 hrs / wk</text>
+        <text y="46" fill="#a1a1aa" font-size="10">Replaced with automated cron</text>
+      </g>
+
+      <line x1="530" y1="20" x2="530" y2="125" stroke="rgba(255,255,255,0.06)" />
+
+      <g transform="translate(560, 24)">
+        <text y="0" fill="#71717a" font-size="10" font-weight="600">AUDIT COMPLIANCE SCORE</text>
+        <text y="26" fill="#10b981" font-size="22" font-weight="700">100%</text>
+        <text y="46" fill="#a1a1aa" font-size="10">Zero security vulnerabilities</text>
+      </g>
+
+      <!-- Bottom mini bar -->
+      <rect x="30" y="88" width="695" height="34" rx="6" fill="rgba(255,255,255,0.03)" />
+      <text x="45" y="110" fill="#a1a1aa" font-size="10">LATEST AUDIT LOG: <tspan fill="#34d399">/var/reports/aws_inventory_2026-09-17.md</tspan> • HASH: sha256:d83f2a1...</text>
+    </g>
+
+  </g>
+
+  <!-- Bottom Brand Watermark -->
+  <text x="60" y="810" fill="#52525b" font-size="12" letter-spacing="3">SUDHARSAN S // SRE &amp; DEVOPS PORTFOLIO</text>
+  <text x="1540" y="810" fill="#52525b" font-size="12" text-anchor="end">AWS CLOUD RECURRING INVENTORY TRACKER</text>
+</svg>
